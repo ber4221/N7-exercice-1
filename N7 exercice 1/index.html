@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Consignes sonores</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+    .container {
+      position: relative;
+      width: 768px; /* largeur de ton image */
+    }
+    .cadre {
+      position: absolute;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="exercice1pageqr.jpg" alt="Cadres de couleurs" width="768">
+
+    <!-- Cases cliquables -->
+    <div class="cadre" style="top:20px; left:20px; width:220px; height:250px;"
+         onclick="jouerSon('son1.mp3')"></div>
+    <div class="cadre" style="top:20px; left:270px; width:220px; height:250px;"
+         onclick="jouerSon('son2.mp3')"></div>
+    <div class="cadre" style="top:20px; left:520px; width:220px; height:250px;"
+         onclick="jouerSon('son3.mp3')"></div>
+
+    <div class="cadre" style="top:300px; left:20px; width:220px; height:250px;"
+         onclick="jouerSon('son4.mp3')"></div>
+    <div class="cadre" style="top:300px; left:270px; width:220px; height:250px;"
+         onclick="jouerSon('son5.mp3')"></div>
+    <div class="cadre" style="top:300px; left:520px; width:220px; height:250px;"
+         onclick="jouerSon('son6.mp3')"></div>
+
+    <div class="cadre" style="top:580px; left:20px; width:220px; height:250px;"
+         onclick="jouerSon('son7.mp3')"></div>
+    <div class="cadre" style="top:580px; left:270px; width:220px; height:250px;"
+         onclick="jouerSon('son8.mp3')"></div>
+    <div class="cadre" style="top:580px; left:520px; width:220px; height:250px;"
+         onclick="jouerSon('son9.mp3')"></div>
+  </div>
+
+  <script>
+    let lecteur = new Audio();
+
+    function jouerSon(fichier) {
+      lecteur.pause();       // stoppe le son en cours
+      lecteur.currentTime = 0; // remet au début
+      lecteur.src = fichier; // change de fichier
+      lecteur.play();        // lance le nouveau son
+    }
+  </script>
+</body>
+</html>
